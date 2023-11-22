@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,30 +16,22 @@ use Illuminate\Http\Request;
 |
 */
 
+// All Listings
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'Latest Listing',
-        'listings' => [
-            'listing' => [
-                'id' => 1,
-                'title' => 'Listing one',
-                'description' => 'For your business, too, your customers’ wins are your wins. 
-                If you’re a small retailer, this is true not just with your in-store customer service,
-                 but also your ecommerce website’s overall UX, its check-out flow, 
-                 your online return options, and your product descriptions.'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Listing 2',
-                'description' => 'For your business, too, your customers’ wins are your wins. 
-                If you’re a small retailer, this is true not just with your in-store customer service,
-                 but also your ecommerce website’s overall UX, its check-out flow, 
-                 your online return options, and your product descriptions.'
-            ]
-
-        ]
+        'listings' => Listing::all()
     ]);
 });
+
+// Single listing
+Route::get('/listings/{id}', function ($id) {
+    return view('listing', [
+        'listing' => Listing::find($id)
+    ]);
+});
+
+
 /*
 Route::get('anas', function () {
     return response('<h2>Hello  Anas mess!!</h2>', 200);
