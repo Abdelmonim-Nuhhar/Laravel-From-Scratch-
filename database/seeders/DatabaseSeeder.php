@@ -44,7 +44,8 @@ class DatabaseSeeder extends Seeder
                  your online return options, and your product descriptions.'
             ]
          );
-
+         // using  Factory
+         Listing::factory(6)->create();       
          //\App\Models\Listings::factory(5)->create();
 
         // \App\Models\User::factory()->create([
