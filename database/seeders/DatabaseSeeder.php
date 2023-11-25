@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Full Stack Engineer',
                  'tags' => 'laraval PHP',
                 'company' => 'Google',
-                'location' => 'Usa',
+                'location' => 'Usa-Washinton DC',
                 'email' => 'google@gmail.com',
                 'website' => 'Https://www.google.com',
                 'description' => 'For your business, too, your customers’ wins are your wins. 
